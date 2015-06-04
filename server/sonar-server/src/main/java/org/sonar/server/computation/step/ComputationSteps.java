@@ -36,45 +36,46 @@ public class ComputationSteps {
    */
   public List<Class<? extends ComputationStep>> orderedStepClasses() {
     return Arrays.asList(
-      // extract report to a temp directory
-      ReportExtractionStep.class,
+        // extract report to a temp directory
+        ReportExtractionStep.class,
 
-      // Builds Component tree
-      BuildComponentTreeStep.class,
+        // Builds Component tree
+        BuildComponentTreeStep.class,
 
-      PopulateComponentsUuidAndKeyStep.class,
-      ValidateProjectStep.class,
+        PopulateComponentsUuidAndKeyStep.class,
+        ValidateProjectStep.class,
 
-      // Read report
-      ParseReportStep.class,
+        // Read report
+        ParseReportStep.class,
 
-      // data computation
-      QualityProfileEventsStep.class,
+        // data computation
+        QualityProfileEventsStep.class,
+        CoreFormulaStep.class,
 
-      // Persist data
-      PersistComponentsAndSnapshotsStep.class,
-      PersistNumberOfDaysSinceLastCommitStep.class,
-      PersistMeasuresStep.class,
-      PersistIssuesStep.class,
-      PersistProjectLinksStep.class,
-      PersistEventsStep.class,
-      PersistDuplicationsStep.class,
-      PersistFileSourcesStep.class,
-      PersistTestsStep.class,
+        // Persist data
+        PersistComponentsAndSnapshotsStep.class,
+        PersistNumberOfDaysSinceLastCommitStep.class,
+        PersistMeasuresStep.class,
+        PersistIssuesStep.class,
+        PersistProjectLinksStep.class,
+        PersistEventsStep.class,
+        PersistDuplicationsStep.class,
+        PersistFileSourcesStep.class,
+        PersistTestsStep.class,
 
-      // Switch snapshot and purge
-      SwitchSnapshotStep.class,
-      IndexComponentsStep.class,
-      PurgeDatastoresStep.class,
+        // Switch snapshot and purge
+        SwitchSnapshotStep.class,
+        IndexComponentsStep.class,
+        PurgeDatastoresStep.class,
 
-      // ES indexing is done after all db changes
-      ApplyPermissionsStep.class,
-      IndexIssuesStep.class,
-      IndexSourceLinesStep.class,
-      IndexTestsStep.class,
+        // ES indexing is done after all db changes
+        ApplyPermissionsStep.class,
+        IndexIssuesStep.class,
+        IndexSourceLinesStep.class,
+        IndexTestsStep.class,
 
-      // notifications are sent at the end, so that webapp displays up-to-date information
-      SendIssueNotificationsStep.class);
+        // notifications are sent at the end, so that webapp displays up-to-date information
+        SendIssueNotificationsStep.class);
   }
 
   private final ComputeEngineContainer computeEngineContainer;
