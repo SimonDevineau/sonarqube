@@ -6,7 +6,8 @@ module.exports = (grunt) ->
   });
   require('time-grunt')(grunt);
 
-  expressPort = 3000 #'<%= grunt.option("port") || 3000 %>'
+  expressPort = '<%= grunt.option("port") || 3000 %>'
+  internPort = '<%= grunt.option("internPort") || 9100 %>'
 
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
@@ -300,6 +301,9 @@ module.exports = (grunt) ->
           config: 'test/intern'
           excludeInstrumentation: true
           reporters: ['Runner']
+          port: expressPort
+          proxyPort: internPort
+          proxyUrl: 'http://localhost:' + internPort + '/'
       coverage:
         options:
           runType: 'runner'
