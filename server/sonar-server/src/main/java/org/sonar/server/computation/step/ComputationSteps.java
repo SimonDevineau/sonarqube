@@ -24,7 +24,6 @@ import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import java.util.List;
 import org.sonar.server.computation.container.ComputeEngineContainer;
-import org.sonar.server.computation.issue.IntegrateIssuesStep;
 
 /**
  * Ordered list of steps to be executed
@@ -48,11 +47,11 @@ public class ComputationSteps {
       FeedDebtModelStep.class,
 
       // load project related stuffs
-      IntegrateIssuesStep.class,
       QualityGateLoadingStep.class,
       FeedPeriodsStep.class,
 
       // data computation
+      IntegrateIssuesStep.class,
       CustomMeasuresCopyStep.class,
       ComputeIssueMeasuresStep.class,
       SqaleMeasuresStep.class,
