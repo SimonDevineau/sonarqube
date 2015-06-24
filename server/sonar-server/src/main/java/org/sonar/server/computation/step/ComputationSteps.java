@@ -53,7 +53,6 @@ public class ComputationSteps {
       // data computation
       IntegrateIssuesStep.class,
       CustomMeasuresCopyStep.class,
-      ComputeIssueMeasuresStep.class,
       SqaleMeasuresStep.class,
 
       // Must be executed after computation of all measures
