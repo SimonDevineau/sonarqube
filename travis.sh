@@ -32,7 +32,7 @@ MYSQL)
   ;;
 
 WEB)
-  cd server/sonar-web && npm run build-test
+  cd server/sonar-web && npm install && npm test
   ;;
 
 PRANALYSIS)
