@@ -42,6 +42,7 @@ import org.sonar.server.computation.component.ProjectSettingsRepository;
 import org.sonar.server.computation.component.TreeRootHolderImpl;
 import org.sonar.server.computation.debt.DebtModelHolderImpl;
 import org.sonar.server.computation.event.EventRepositoryImpl;
+import org.sonar.server.computation.formula.LineFormula;
 import org.sonar.server.computation.issue.IssueCache;
 import org.sonar.server.computation.issue.IssueComputation;
 import org.sonar.server.computation.issue.RuleCache;
@@ -158,6 +159,9 @@ public class ComputeEngineContainerImpl extends ComponentContainer implements Co
       RuleCacheLoader.class,
       IssueCache.class,
       UpdateConflictResolver.class,
+
+      // formulas
+      LineFormula.class,
 
       // views
       ViewIndex.class,
