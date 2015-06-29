@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   });
   require('time-grunt')(grunt);
 
-  useBrowserStack = !!process.env['BROWSERSTACK_USERNAME'] && !!process.env['BROWSERSTACK_ACCESS_KEY']
+  useBrowserStack = false #!!process.env['BROWSERSTACK_USERNAME'] && !!process.env['BROWSERSTACK_ACCESS_KEY']
   expressPort = '<%= grunt.option("port") || 3000 %>'
   internPort = '<%= grunt.option("internPort") || 9100 %>'
 
