@@ -357,11 +357,5 @@ module.exports = (grunt) ->
   grunt.registerTask 'maven-quick-build',
       ['build-fast']
 
-  grunt.registerTask 'maven-build-skip-tests-true-nocoverage',
+  grunt.registerTask 'maven-build',
       ['build']
-
-  grunt.registerTask 'maven-build-skip-tests-false-nocoverage',
-      ['build-test']
-
-  grunt.registerTask 'maven-build-skip-tests-false-coverage',
-      ['build-coverage']

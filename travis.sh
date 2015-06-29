@@ -31,6 +31,10 @@ MYSQL)
   travis_runDatabaseCI "mysql" "jdbc:mysql://localhost/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance" "sonar" "sonar"
   ;;
 
+WEB)
+  cd server/sonar-web && npm run build-test
+  ;;
+
 PRANALYSIS)
   if [ -n "$SONAR_GITHUB_OAUTH" ] && [ "${TRAVIS_PULL_REQUEST}" != "false" ] 
   then
